@@ -5,6 +5,7 @@
 
 const cryptoTopDiv = document.getElementById('crypto-top')
 const priceDivEl = document.getElementById('price')
+const timeEL = document.getElementById('time')
 
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     .then(response => response.json())
@@ -41,3 +42,10 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         `                
     })
     .catch(err => console.error(err))
+
+function getCurrentTime() {
+    const date = new Date()
+    timeEL.textContent = date.toLocaleTimeString("en-in", {timeStyle: "medium"})
+}
+setInterval(getCurrentTime, 1000)
+
