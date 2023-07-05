@@ -6,6 +6,7 @@
 const cryptoTopDiv = document.getElementById('crypto-top')
 const priceDivEl = document.getElementById('price')
 const timeEL = document.getElementById('time')
+const weatherDiv = document.getElementById('weather')
 
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     .then(response => response.json())
@@ -43,9 +44,29 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     })
     .catch(err => console.error(err))
 
+
+setInterval(getCurrentTime, 1000)
 function getCurrentTime() {
     const date = new Date()
     timeEL.textContent = date.toLocaleTimeString("en-in", {timeStyle: "medium"})
 }
-setInterval(getCurrentTime, 1000)
 
+ navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position)
+    fetch("https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=17.46&lon=78.55&units=metric")
+       .then(response => {
+        if(!response.ok) {
+            throw Error("Weather data not found") 
+        }
+        return response.json()
+       })
+       .then(data => {
+           console.log(data)
+           weatherDiv.innerHTML = `
+                <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon" /> 
+                <h2>${Math.round(data.main.temp)}°C</h2>
+                <h>${data.name}</h>
+                `
+       })
+       .catch(err => console.error(err))
+ })

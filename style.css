@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    /* border: 2px solid white; */
 }
 body {
     background: no-repeat center center fixed; 
@@ -13,6 +13,8 @@ body {
     background-size: cover; 
     position: relative;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0px 0px 20px #242424;
 }
 
 main {
@@ -37,4 +39,10 @@ div#crypto {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+#weather {
+    text-align: center;
+}
+#author {
+    padding: 5px;
 }
