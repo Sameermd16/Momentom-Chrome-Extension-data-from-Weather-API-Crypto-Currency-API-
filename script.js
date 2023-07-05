@@ -64,9 +64,43 @@ function getCurrentTime() {
            console.log(data)
            weatherDiv.innerHTML = `
                 <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon" /> 
-                <h2>${Math.round(data.main.temp)}°C</h2>
-                <h>${data.name}</h>
+                <p>${Math.round(data.main.temp)}°C</p>
+                <p>${data.name}</p>
                 `
        })
        .catch(err => console.error(err))
  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // {
+//     "manifest_version": 3,
+//     "name": "Momentom",
+//     "version": "1.0.0",
+//     "description": "Make your dull chrome home page background to awesome nature images background with time, weather & crypto price details",
+//     "author": "sameerthemc@gmail.com",
+//     "icons": {
+//         "16": "time.png",
+//         "48": "time.png",
+//         "128": "time.png"
+//     },
+//     "action": {
+//         "default_icon": {
+//             "16": "time.png",
+//             "48": "time.png",
+//             "128": "time.png"
+//         },
+//         "default_title": "Momentom"
+//     }
+// }

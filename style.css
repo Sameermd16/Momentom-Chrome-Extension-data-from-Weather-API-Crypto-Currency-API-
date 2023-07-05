@@ -42,7 +42,14 @@ div#crypto {
 }
 #weather {
     text-align: center;
+    padding-right: 5px;
+}
+#weather > p {
+    font-size: 20px;
 }
 #author {
     padding: 5px;
+}
+#time {
+    font-size: 43px;
 }

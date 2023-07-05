@@ -1,20 +1,13 @@
 {
     "manifest_version": 3,
-    "name": "Momentom",
+    "name": "Personal Dashboard",
     "version": "1.0.0",
     "description": "Make your dull chrome home page background to awesome nature images background with time, weather & crypto price details",
-    "author": "sameerthemc@gmail.com",
-    "icons": {
-        "16": "time.png",
-        "48": "time.png",
-        "128": "time.png"
-    },
     "action": {
-        "default_icon": {
-            "16": "time.png",
-            "48": "time.png",
-            "128": "time.png"
-        },
+        "default_icon": "time.png",
         "default_title": "Momentom"
+    },
+    "chrome_url_overrides": {
+        "newtab": "index.html"
     }
 }
