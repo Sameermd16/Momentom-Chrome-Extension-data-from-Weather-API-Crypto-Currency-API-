@@ -10,7 +10,11 @@
         "128": "time.png"
     },
     "action": {
-        "default_icon": "time.png"
-    },
-    "default_title": "Momentom"
+        "default_icon": {
+            "16": "time.png",
+            "48": "time.png",
+            "128": "time.png"
+        },
+        "default_title": "Momentom"
+    }
 }
